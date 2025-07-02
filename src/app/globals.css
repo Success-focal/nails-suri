@@ -1,0 +1,144 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-dm-sans); /* DM Sans for UI + Body + Nav */
+  --font-mono: var(
+    --font-libre-baskerville
+  ); /* Libre Baskerville for Headings + Quotes */
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.75rem;
+
+  --background: oklch(98.7% 0.015 20); /* Soft Pearl Blush */
+  --foreground: oklch(25% 0.05 320); /* Deep Mulberry */
+
+  --card: oklch(99% 0.01 40); /* Ivory Satin */
+  --card-foreground: oklch(25% 0.05 320);
+
+  --popover: oklch(99% 0.01 40);
+  --popover-foreground: oklch(25% 0.05 320);
+
+  --primary: oklch(91% 0.09 10); /* Ballet Pink */
+  --primary-foreground: oklch(28% 0.04 330); /* Velvet Plum */
+
+  --secondary: oklch(85% 0.07 60); /* Rosé Beige */
+  --secondary-foreground: oklch(30% 0.04 330);
+
+  --muted: oklch(88% 0.04 15); /* Misty Blush */
+  --muted-foreground: oklch(50% 0.03 15); /* Soft Taupe */
+
+  --accent: oklch(80% 0.09 345); /* Dusty Rose */
+  --accent-foreground: oklch(22% 0.03 330); /* Dark Plum */
+
+  --destructive: oklch(70% 0.18 30); /* Coral Rouge */
+
+  --border: oklch(91% 0.01 20);
+  --input: oklch(94% 0.01 20);
+  --ring: oklch(75% 0.05 350);
+
+  /* Sidebar Theming (think elegance + pop) */
+  --sidebar: oklch(92% 0.06 20);
+  --sidebar-foreground: oklch(28% 0.04 330);
+  --sidebar-primary: oklch(82% 0.08 345); /* Rosy Mauve */
+  --sidebar-primary-foreground: oklch(99% 0.01 40);
+  --sidebar-accent: oklch(87% 0.05 20);
+  --sidebar-accent-foreground: oklch(25% 0.05 320);
+  --sidebar-border: oklch(89% 0.01 20);
+  --sidebar-ring: oklch(75% 0.05 350);
+
+  /* Charts: Softer, feminine tones */
+  --chart-1: oklch(87% 0.1 70); /* Champagne Honey */
+  --chart-2: oklch(73% 0.14 350); /* Peach Blush */
+  --chart-3: oklch(60% 0.12 280); /* Orchid Pink */
+  --chart-4: oklch(95% 0.18 95); /* Gold Radiance */
+  --chart-5: oklch(82% 0.16 85); /* Golden Beige */
+}
+
+.dark {
+  --background: oklch(23% 0.04 330); /* Deep Plum */
+  --foreground: oklch(99% 0.01 40); /* Off White */
+
+  --card: oklch(28% 0.05 330);
+  --card-foreground: oklch(99% 0.01 40);
+
+  --popover: oklch(28% 0.05 330);
+  --popover-foreground: oklch(99% 0.01 40);
+
+  --primary: oklch(82% 0.08 345); /* Soft Rose */
+  --primary-foreground: oklch(28% 0.05 330);
+
+  --secondary: oklch(55% 0.06 40); /* Rosé Mocha */
+  --secondary-foreground: oklch(99% 0.01 40);
+
+  --muted: oklch(38% 0.03 20); /* Earthy Rose */
+  --muted-foreground: oklch(75% 0.02 10);
+
+  --accent: oklch(68% 0.08 345); /* Warm Blush */
+  --accent-foreground: oklch(99% 0.01 40);
+
+  --destructive: oklch(50% 0.18 30); /* Sunset Coral */
+  --border: oklch(43% 0.01 30);
+  --input: oklch(47% 0.01 30);
+  --ring: oklch(75% 0.04 350);
+
+  --sidebar: oklch(28% 0.05 330);
+  --sidebar-foreground: oklch(99% 0.01 40);
+  --sidebar-primary: oklch(64% 0.1 340); /* Rosy Ember */
+  --sidebar-primary-foreground: oklch(99% 0.01 40);
+  --sidebar-accent: oklch(52% 0.06 330);
+  --sidebar-accent-foreground: oklch(99% 0.01 40);
+  --sidebar-border: oklch(44% 0.01 20);
+  --sidebar-ring: oklch(72% 0.05 330);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
