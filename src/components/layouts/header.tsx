@@ -5,15 +5,7 @@ import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "../ui/button";
-
-const navItems = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About Us" },
-  { href: "/services", label: "Services" },
-  { href: "/booking", label: "Booking" },
-  { href: "/gallery", label: "Gallery" },
-  { href: "/contact", label: "Contact Us" },
-];
+import { navItems } from "@/lib/data/navLinks";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);

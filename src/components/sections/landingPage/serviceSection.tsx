@@ -10,7 +10,7 @@ const ServiceSection = () => {
   return (
     <section
       id="home-services"
-      className="relative w-full bg-background px-6 sm:px-8 md:px-16 md:pt-20 pt-4 my-10"
+      className="relative w-full bg-background px-6 sm:px-8 md:px-16 md:pt-20 pt-4 mt-10"
     >
       {/* Circular Decorative Image */}
       <div className="absolute -top-16 left-1/2 -translate-x-1/2 w-40 h-40 sm:w-52 sm:h-52 md:w-64 md:h-64 rounded-full overflow-hidden shadow-lg border-4 border-primary z-10 bg-white">
@@ -45,6 +45,7 @@ const ServiceSection = () => {
                   src={service.image}
                   alt={service.name}
                   fill
+                  sizes="(max-width: 768px) 96px, 96px"
                   className="object-contain"
                 />
               </div>
