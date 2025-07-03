@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { DM_Sans, Libre_Baskerville } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layouts/header";
+import Footer from "@/components/layouts/footer";
+import { GoTop } from "@/components/layouts/Top";
 
 // UI and body
 const dmSans = DM_Sans({
@@ -32,10 +34,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${dmSans.variable} ${libreBaskerville.variable} antialiased font-sans`}
+        className={`${dmSans.variable} ${libreBaskerville.variable} antialiased`}
       >
         <Header />
         {children}
+        <Footer />
+        <GoTop />
       </body>
     </html>
   );
