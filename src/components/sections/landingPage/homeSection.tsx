@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import NailPolishing from "@/components/animation/nailPolishing";
+import LottieAnimation from "@/components/animation/lottieAnimation";
 
 export default function HomeSection() {
   return (
@@ -28,7 +28,10 @@ export default function HomeSection() {
           <Button asChild size="lg" className="gap-0">
             <Link href="/services">
               <span>Our Services</span>
-              <NailPolishing />
+              <LottieAnimation
+                src="/animation/nailpolishing.json"
+                className="w-10 h-10"
+              />
             </Link>
           </Button>
         </header>

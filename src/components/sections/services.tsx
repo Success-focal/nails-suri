@@ -4,8 +4,8 @@ import { Badge } from "@/components/ui/badge";
 import { serviceData } from "@/lib/data/datapool";
 import Link from "next/link";
 import { Button } from "../ui/button";
-import Appointment from "../animation/Appointment";
 import { MoveRight } from "lucide-react";
+import LottieAnimation from "../animation/lottieAnimation";
 
 export default function ServiceSection() {
   return (
@@ -134,7 +134,10 @@ export default function ServiceSection() {
             <Button asChild size="lg" className="text-base tracking-wide ">
               <Link href="/booking" className="flex items-center gap-2">
                 <span>Book Your Appointment</span>
-                <Appointment />
+                <LottieAnimation
+                  src="/animation/appointment.json"
+                  className="w-8 h-8"
+                />
               </Link>
             </Button>
           </div>
