@@ -1,4 +1,4 @@
-import LetsBook from "@/components/animation/letsBook";
+import LottieAnimation from "@/components/animation/lottieAnimation";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -49,7 +49,10 @@ const TrustSection = () => {
         >
           <Link href="/booking" className="flex items-center gap-2">
             Let’s Book
-            <LetsBook />
+            <LottieAnimation
+              src="/animation/LetsBook.json"
+              className="w-8 h-8"
+            />
           </Link>
         </Button>
       </div>

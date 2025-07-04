@@ -3,7 +3,7 @@ import { Button } from "../ui/button";
 import Link from "next/link";
 import { Heart } from "lucide-react";
 import Image from "next/image";
-import Appointment from "../animation/Appointment";
+import LottieAnimation from "../animation/lottieAnimation";
 
 const Aboutus = () => {
   return (
@@ -123,7 +123,10 @@ const Aboutus = () => {
           <Button asChild size="lg" className="text-base tracking-wide ">
             <Link href="/booking" className="flex items-center gap-2">
               <span>Book Your Appointment</span>
-              <Appointment />
+              <LottieAnimation
+                src="/animation/appointment.json"
+                className="w-8 h-8"
+              />
             </Link>
           </Button>
         </div>

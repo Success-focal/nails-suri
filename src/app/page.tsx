@@ -1,4 +1,4 @@
-import NailsBothHand from "@/components/animation/nailsBothhand";
+import LottieAnimation from "@/components/animation/lottieAnimation";
 import BannerSection from "@/components/sections/landingPage/bannerSection";
 import HomeSection from "@/components/sections/landingPage/homeSection";
 import ServiceSection from "@/components/sections/landingPage/serviceSection";
@@ -13,7 +13,7 @@ export default function Home() {
       </main>
       <BannerSection />
       <main className="max-w-5xl w-full flex flex-col items-center sm:items-start">
-        <NailsBothHand />
+        <LottieAnimation src="/animation/Twohands.json" className="w-28 h-28" />
         <TrustSection />
       </main>
     </div>
