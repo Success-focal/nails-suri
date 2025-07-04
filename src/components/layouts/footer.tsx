@@ -32,7 +32,7 @@ export default function Footer() {
       <div className="relative grid grid-cols-1 md:grid-cols-3 gap-12 gap-y-16 items-start max-w-7xl mx-auto z-10">
         {/* Logo + About */}
         <div className="space-y-4 text-center md:text-left">
-          <div className="relative w-[150px] h-[150px] mx-auto md:mx-0 rounded-full overflow-hidden mb-2">
+          <div className="relative w-[90px] h-[90px] md:w-[150px] md:h-[150px] mx-auto md:mx-0 rounded-full overflow-hidden mb-2">
             <Image
               src="/logo/Footer.png"
               alt="Suri Nails Logo"

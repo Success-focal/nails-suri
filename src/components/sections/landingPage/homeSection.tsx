@@ -29,7 +29,7 @@ export default function HomeSection() {
             <Link href="/services">
               <span>Our Services</span>
               <LottieAnimation
-                src="/animation/nailpolishing.json"
+                src="/animation/Nailpolishing.json"
                 className="w-10 h-10"
               />
             </Link>

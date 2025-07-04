@@ -170,7 +170,7 @@
   scrollbar-color: oklch(54.787% 0.08154 19.993) oklch(0.95 0.04 30);
 }
 
-/* Feminine Text Selection Styling */
+/* Text Selection Styling */
 ::selection {
   background-color: oklch(0.55 0.1 340); /* soft dusty rose */
   background-image: linear-gradient(

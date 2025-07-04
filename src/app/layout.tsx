@@ -34,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${dmSans.variable} ${libreBaskerville.variable} antialiased`}
+        className={`${dmSans.variable} ${libreBaskerville.variable} antialiased min-h-screen"`}
       >
         <Header />
         {children}
