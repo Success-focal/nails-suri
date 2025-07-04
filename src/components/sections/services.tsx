@@ -5,6 +5,7 @@ import { serviceData } from "@/lib/data/datapool";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import Appointment from "../animation/Appointment";
+import { MoveRight } from "lucide-react";
 
 export default function ServiceSection() {
   return (
@@ -19,7 +20,7 @@ export default function ServiceSection() {
           <h2 className="text-4xl font-bold tracking-tight text-foreground font-sans">
             Our Signature Services
           </h2>
-          <p className="text-muted-foreground text-lg font-mono">
+          <p className="text-muted-foreground text-md font-mono">
             Discover the elegance of nail perfection and pampering rituals. Each
             treatment is crafted with love, care, and high-quality vegan
             products to enhance your natural beauty.
@@ -27,50 +28,80 @@ export default function ServiceSection() {
         </div>
       </div>
 
-      <div className="space-y-24 max-w-6xl mx-auto">
+      <div className="space-y-24 max-w-5xl mx-auto">
         {Object.entries(serviceData).map(
           ([category, { id, image, services }]) => (
             <div
               key={category}
               id={id}
-              className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start scroll-mt-28"
+              className="grid grid-cols-1 md:grid-cols-5 gap-10 items-start scroll-mt-28 "
             >
-              {/* Left: Image */}
-              <div className="w-full relative rounded-2xl overflow-hidden shadow-md h-[300px] md:h-[500px]">
+              {/* Left: Image (2/5 columns on large screens) */}
+              <div
+                className="md:col-span-2 w-[90%] md:w-full flex items-center justify-center relative rounded-2xl overflow-hidden shadow-md h-[300px] lg:h-[400px] group
+               cursor-[url('/cursor/cursor.svg'),_pointer]"
+              >
                 <Image
                   src={image}
                   alt={category}
                   fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover object-ceneter rounded-2xl"
+                  sizes="(max-width: 768px) 100vw, 40vw"
+                  className="object-cover object-center rounded-2xl scale-110 blur-xs grayscale
+                  transition-all ease-out group-hover:scale-100 duration-700 group-hover:blur-none group-hover:grayscale-0
+                  "
                   priority={id === "manicure"}
                 />
+
+                <div className="absolute bottom-4 left-4 right-4 z-10 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out">
+                  <div className="flex items-center justify-between gap-2 font-sans bg-muted-foreground backdrop-blur-md px-4 py-2 rounded-xl shadow-md text-foreground text-sm font-medium tracking-wide">
+                    <span className="text-accent">{category} Menu</span>
+                    <span className="transform transition-transform duration-500 group-hover:translate-x-1 text-accent animate-pulse">
+                      <MoveRight />
+                    </span>
+                  </div>
+                </div>
               </div>
 
-              {/* Right: Service List */}
-              <div className="space-y-6">
-                <div className="flex items-center gap-3">
-                  <h3 className="text-2xl font-semibold text-accent">
+              {/* Right: Service List (3/5 columns on large screens) */}
+              <div className="md:col-span-3 space-y-6">
+                {/* Heading and Badge */}
+                <div className="flex items-center gap-4 font-sans tracking-wider text-accent">
+                  <h3 className="text-2xl md:text-3xl font-medium ">
                     {category}
                   </h3>
-                  <Badge variant="outline" className="text-xs uppercase">
+                  <Badge
+                    variant="outline"
+                    className="text-xs uppercase border-accent bg-background/70 text-accent  backdrop-blur-md px-2 py-1 shadow-sm"
+                  >
                     {services.length} Services
                   </Badge>
                 </div>
 
-                <ul className="space-y-4">
+                {/* List of Services */}
+                <ul className="space-y-5">
                   {services.map((service, index) => (
-                    <li key={index} className="border-b pb-4">
-                      <div className="flex justify-between items-start flex-wrap">
-                        <h4 className="text-lg font-semibold text-foreground">
-                          {service.name}
+                    <li
+                      key={index}
+                      className="border-b border-border pb-2 hover:border-accent/40 transition-colors duration-300 group tracking-tight font-mono"
+                    >
+                      <div className="flex justify-between items-start gap-3 flex-wrap">
+                        {/* Service Name with hover underline */}
+                        <h4 className="text-base md:text-md font-semibold text-foreground relative">
+                          <span className="inline-block">
+                            {service.name}
+                            <span className="block w-0 group-hover:w-full h-[1.5px] bg-accent transition-all ease-out duration-500 mt-0" />
+                          </span>
                         </h4>
-                        <p className="text-base font-medium text-primary ml-auto">
+
+                        {/* Price */}
+                        <p className="text-base md:text-md font-medium text-secondary ml-auto">
                           {service.price}
                         </p>
                       </div>
+
+                      {/* Description */}
                       {service.description && (
-                        <p className="text-sm text-muted-foreground mt-1">
+                        <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
                           {service.description}
                         </p>
                       )}
@@ -83,7 +114,7 @@ export default function ServiceSection() {
         )}
       </div>
 
-      <section className="relative w-full h-[250px] sm:h-[300px] md:h-[360px] lg:h-[400px] xl:h-[420px] rounded-2xl overflow-hidden shadow-xl my-20">
+      <section className="relative w-full h-[250px] sm:h-[300px] md:h-[360px] lg:h-[400px] xl:h-[420px] rounded-2xl overflow-hidden shadow-xl mt-20">
         {/* Background Banner Image */}
         <Image
           src="/models/serviceBanner.jpg"
@@ -97,7 +128,7 @@ export default function ServiceSection() {
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/30 md:bg-black/20 flex items-center justify-center px-6 text-center">
           <div className="max-w-3xl space-y-4 text-popover">
-            <p className="text-lg md:text-xl font-light tracking-wide font-mono">
+            <p className="text-lg md:text-xl font-light font-mono tracking-wider">
               Elevate your everyday with our signature touch of elegance.
             </p>
             <Button asChild size="lg" className="text-base tracking-wide ">
