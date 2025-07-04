@@ -6,7 +6,7 @@ export const services = [
   },
   {
     name: "Pedicure",
-    image: "/icons/pedicure.png",
+    image: "/icons/Pedicure.png",
     anchor: "pedicure",
   },
   {
@@ -220,3 +220,21 @@ export const serviceData = {
     ],
   },
 } as const;
+
+export const imagesGallery = [
+  "/gallery/eyelashextension.jpg",
+  "/gallery/manicure.jpg",
+  "/gallery/Model1.jpg",
+  "/gallery/Model2.jpg",
+  "/gallery/Model3.jpg",
+  "/gallery/Model4.png",
+  "/gallery/Model5.jpg",
+  "/gallery/Model6.jpeg",
+  "/gallery/Model7.jpeg",
+  "/gallery/nailart.jpg",
+  "/gallery/nailenhancement.jpg",
+  "/gallery/pedicure.jpg",
+  "/gallery/removal.jpg",
+  "/gallery/SuriMJ.jpeg",
+  "/gallery/waxing.jpg",
+] ;
